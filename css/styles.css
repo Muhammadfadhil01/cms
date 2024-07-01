@@ -1,0 +1,12 @@
+mabar
+
+.pager li{
+    margin: 2px;
+}
+
+.pager li .active_link{
+    background: #4639f5 !important;
+    color: white;
+
+}
+

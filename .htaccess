@@ -1,0 +1,19 @@
+RewriteEngine On
+
+# index, contact, dan registration
+RewriteRule ^(index|contact|registration|login_user)$ $1.php [NC,L]
+
+# Redirect /cms/post ke /cms/index
+RewriteRule ^post$ /cms/index [L,R=301]
+
+# /cms/post/123
+RewriteRule ^post/(\d+)$ post.php?p_id=$1 [NC,L]
+
+# Redirect /cms/category ke /cms/index
+RewriteRule ^category$ /cms/index [L,R=301]
+
+# /cms/category/66/page/2
+RewriteRule ^category/(\d+)/page/(\d+)$ category.php?category=$1&page=$2 [NC,L]
+
+# Mengarahkan ke halaman 404 jika halaman tidak ditemukan
+ErrorDocument 404 /cms/404.php
